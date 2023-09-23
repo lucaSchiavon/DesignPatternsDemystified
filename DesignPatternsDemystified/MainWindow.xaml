@@ -8,10 +8,10 @@
         Title="Design patterns demystified" Height="462" Width="905">
     <Grid>
         <Rectangle HorizontalAlignment="Center" Height="414" Stroke="Black" VerticalAlignment="Center" Width="885"/>
-
-        <Button Content="CREATIONAL PATTERNS" HorizontalAlignment="Center" Margin="0,154,0,0" VerticalAlignment="Top" Height="69" Width="377" Click="BtnCreationalPatterns_Click" FontSize="22" FontWeight="Bold"/>
         <Label Content="C# Design Patterns Demystified: Upgrade your skill to senior development" HorizontalAlignment="Center" Margin="0,28,0,0" VerticalAlignment="Top" FontSize="24" Width="864" FontWeight="Bold"/>
         <Label Content="click on the buttons below to test the examples in the book" HorizontalAlignment="Left" Margin="21,75,0,0" VerticalAlignment="Top" FontSize="22" Width="643"/>
+        <Button Content="CREATIONAL PATTERNS" HorizontalAlignment="Center" Margin="0,154,0,0" VerticalAlignment="Top" Height="69" Width="377" Click="BtnCreationalPatterns_Click" FontSize="22" FontWeight="Bold"/>
+        <Button Content="BEHAVIORAL PATTERNS" HorizontalAlignment="Center" Margin="0,251,0,0" VerticalAlignment="Top" Height="69" Width="377" Click="BtnBehavioralPatterns_Click" FontSize="22" FontWeight="Bold"/>
 
     </Grid>
 </Window>

@@ -28,5 +28,11 @@ namespace DesignPatternsDemystified
             CreationalPattern creationalPatterns = new CreationalPattern();
             creationalPatterns.Show();
         }
+
+        private void BtnBehavioralPatterns_Click(object sender, RoutedEventArgs e)
+        {
+            BehavioralPattern behavioralPattern = new BehavioralPattern();
+            behavioralPattern.Show();
+        }
     }
 }
