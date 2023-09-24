@@ -1,0 +1,20 @@
+﻿<Window x:Class="DesignPatternsDemystified.SOLIDPrinciple"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesignPatternsDemystified"
+        mc:Ignorable="d"
+        Title="SOLIDPrinciples" Height="450" Width="800">
+    <Grid>
+        <Rectangle HorizontalAlignment="Center" Height="414" Stroke="Black" VerticalAlignment="Center" Width="780"/>
+
+        <Label Content="SOLID principles" HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" FontSize="24" Width="240" FontWeight="Bold"/>
+        <Button Content="S=Single responsability principle (SRP)" HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Height="42" Width="390" Click="BtnSRP" FontWeight="Bold" FontSize="20"/>
+        <Button Content="O=Open close principle (OCP)" HorizontalAlignment="Center" Margin="0,151,0,0" VerticalAlignment="Top" Height="42" Width="390" Click="BtnOCP" FontWeight="Bold" FontSize="20"/>
+        <Button Content="L=Liskov substitution principle (LSP)" HorizontalAlignment="Center" Margin="0,198,0,0" VerticalAlignment="Top" Height="42" Width="390" Click="BtnLSP" FontWeight="Bold" FontSize="20"/>
+        <Button Content="I=Interface segregation principle (ISP)" HorizontalAlignment="Center" Margin="0,245,0,0" VerticalAlignment="Top" Height="42" Width="390" Click="BtnISP" FontWeight="Bold" FontSize="20"/>
+        <Button Content="D=Dependency inversion principle (DIP)" HorizontalAlignment="Center" Margin="0,292,0,0" VerticalAlignment="Top" Height="42" Width="390" Click="BtnDIP" FontWeight="Bold" FontSize="20"/>
+
+    </Grid>
+</Window>

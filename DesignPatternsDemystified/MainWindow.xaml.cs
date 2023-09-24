@@ -34,5 +34,11 @@ namespace DesignPatternsDemystified
             BehavioralPattern behavioralPattern = new BehavioralPattern();
             behavioralPattern.Show();
         }
+
+        private void BtnSolidPrinciples_Click(object sender, RoutedEventArgs e)
+        {
+            SOLIDPrinciple sOLIDPrinciple = new SOLIDPrinciple();
+            sOLIDPrinciple.Show();
+        }
     }
 }

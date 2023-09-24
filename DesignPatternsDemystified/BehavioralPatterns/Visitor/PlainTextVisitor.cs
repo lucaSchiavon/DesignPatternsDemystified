@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DesignPatternsDemystified.BehavioralPatterns
+namespace DesignPatternsDemystified.BehavioralPatterns.Visitor
 {
     // Concrete implementation of plain text generation visitor.
     class PlainTextVisitor : IVisitor

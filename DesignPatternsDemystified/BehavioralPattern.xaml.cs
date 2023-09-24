@@ -1,4 +1,5 @@
-﻿using DesignPatternsDemystified.BehavioralPatterns;
+﻿using DesignPatternsDemystified.BehavioralPatterns.TemplateMethod;
+using DesignPatternsDemystified.BehavioralPatterns.Visitor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace DesignPatternsDemystified
             // Create a list of elements in a document.
             List<Element> elements = new List<Element>
         {
-            new BehavioralPatterns.TextElement { Text = "This is a paragraph of text." },
+            new BehavioralPatterns.Visitor.TextElement { Text = "This is a paragraph of text." },
             new HyperlinkElement { Url = "https://www.example.com", Text = "Visit Example.com" }
         };
 
@@ -49,6 +50,17 @@ namespace DesignPatternsDemystified
             {
                 element.Accept(plainTextVisitor);
             }
+        }
+
+        private void BtnTemplateMethod_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Making a BLT Sandwich:");
+            Sandwich bltSandwich = new BLTSandwich();
+            bltSandwich.MakeSandwich();
+
+            Console.WriteLine("\nMaking a Veggie Sandwich:");
+            Sandwich veggieSandwich = new VeggieSandwich();
+            veggieSandwich.MakeSandwich();
         }
     }
 }

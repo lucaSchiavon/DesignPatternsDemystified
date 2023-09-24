@@ -1,4 +1,4 @@
-﻿using DesignPatternsDemystified.CreationalPatterns;
+﻿using DesignPatternsDemystified.CreationalPatterns.Singleton;
 using System;
 using System.Collections.Generic;
 using System.Linq;

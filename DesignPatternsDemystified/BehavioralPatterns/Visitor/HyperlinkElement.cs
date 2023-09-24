@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DesignPatternsDemystified.BehavioralPatterns
+namespace DesignPatternsDemystified.BehavioralPatterns.Visitor
 {
     // Concrete HyperlinkElement class representing hyperlinks.
     class HyperlinkElement : Element

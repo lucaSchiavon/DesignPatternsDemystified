@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatternsDemystified.CreationalPatterns
+namespace DesignPatternsDemystified.CreationalPatterns.Singleton
 {
     public sealed class Singleton
     {

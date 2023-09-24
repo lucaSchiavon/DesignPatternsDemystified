@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DesignPatternsDemystified.BehavioralPatterns
+namespace DesignPatternsDemystified.BehavioralPatterns.Visitor
 {
     // Concrete TextElement class representing text content.
     class TextElement : Element

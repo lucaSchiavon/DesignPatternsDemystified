@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DesignPatternsDemystified.BehavioralPatterns
+namespace DesignPatternsDemystified.BehavioralPatterns.Visitor
 {
     // Define the Visitor interface.
     interface IVisitor
