@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DesignPatternsDemystified.SOLIDPrinciples.DIP;
+using DesignPatternsDemystified.SOLIDPrinciples.LSP;
 
 namespace DesignPatternsDemystified
 {
@@ -42,8 +43,8 @@ namespace DesignPatternsDemystified
 
         private void BtnOCP(object sender, RoutedEventArgs e)
         {
-            Invoice finalInvoice = new FinalInvoice();
-            Invoice proposedInvoice = new ProposedInvoice();
+            SOLIDPrinciples.OCP.Invoice finalInvoice = new FinalInvoice();
+            SOLIDPrinciples.OCP.Invoice proposedInvoice = new ProposedInvoice();
 
             double finalInvoiceAmount = finalInvoice.GetInvoiceDiscount(20000);
             double proposedInvoiceAmount = proposedInvoice.GetInvoiceDiscount(20000);
@@ -52,7 +53,13 @@ namespace DesignPatternsDemystified
 
         private void BtnLSP(object sender, RoutedEventArgs e)
         {
+            Animal myPet1 = new Dog();
+            Animal myPet2 = new Cat();
+            Animal myPet3 = new Fish();
 
+            myPet1.MakeSound(); // Output: A dog barks.
+            myPet2.MakeSound(); // Output: A cat meows.
+            myPet3.MakeSound(); // Output: A fish doesn't make sound.
         }
 
         private void BtnISP(object sender, RoutedEventArgs e)
@@ -78,10 +85,10 @@ namespace DesignPatternsDemystified
             {
                 //here some code...
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                el.LogException(e);
-
+                el.LogException(ex);
+                
             }
 
         }
