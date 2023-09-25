@@ -1,4 +1,5 @@
-﻿using DesignPatternsDemystified.BehavioralPatterns.TemplateMethod;
+﻿using DesignPatternsDemystified.BehavioralPatterns.Strategy;
+using DesignPatternsDemystified.BehavioralPatterns.TemplateMethod;
 using DesignPatternsDemystified.BehavioralPatterns.Visitor;
 using System;
 using System.Collections.Generic;
@@ -61,6 +62,26 @@ namespace DesignPatternsDemystified
             Console.WriteLine("\nMaking a Veggie Sandwich:");
             Sandwich veggieSandwich = new VeggieSandwich();
             veggieSandwich.MakeSandwich();
+        }
+
+        private void BtnStrategy_Click(object sender, RoutedEventArgs e)
+        {
+            var cart = new ShoppingCart(new CreditCardPayment());
+
+            // Make a payment
+            cart.Checkout(100.00);
+
+            // Change the payment method to PayPal
+            cart.SetPaymentStrategy(new PayPalPayment());
+
+            // Make another payment with the new payment method (PayPal)
+            cart.Checkout(50.00);
+
+            // Change the payment method to Bitcoin
+            cart.SetPaymentStrategy(new BitcoinPayment());
+
+            // Make another payment with the new payment method (Bitcoin)
+            cart.Checkout(200.00);
         }
     }
 }
