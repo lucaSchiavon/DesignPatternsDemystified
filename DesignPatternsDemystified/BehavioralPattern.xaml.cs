@@ -1,4 +1,6 @@
-﻿using DesignPatternsDemystified.BehavioralPatterns.Strategy;
+﻿using DesignPatternsDemystified.BehavioralPatterns.State.AudioPlayer;
+using DesignPatternsDemystified.BehavioralPatterns.State.TrafficLight;
+using DesignPatternsDemystified.BehavioralPatterns.Strategy;
 using DesignPatternsDemystified.BehavioralPatterns.TemplateMethod;
 using DesignPatternsDemystified.BehavioralPatterns.Visitor;
 using System;
@@ -82,6 +84,33 @@ namespace DesignPatternsDemystified
 
             // Make another payment with the new payment method (Bitcoin)
             cart.Checkout(200.00);
+        }
+
+
+
+        private void BtnStateTrafficLight_Click(object sender, RoutedEventArgs e)
+        {
+            TrafficLight trafficLight = new TrafficLight();
+
+            for (int i = 0; i < 5; i++)
+            {
+                trafficLight.Request();
+            }
+        }
+
+        private void BtnStateAudioPlayer_Click(object sender, RoutedEventArgs e)
+        {
+            AudioPlayer player = new AudioPlayer();
+
+            player.Play();  // Output: Starting playback.
+
+            player.Pause(); // Output: Cannot pause, the player is stopped.
+
+            player.Stop();  // Output: Already stopped.
+
+            player.Play();  // Output: Starting playback.
+
+            player.Pause(); // Output: Pausing the playback.
         }
     }
 }

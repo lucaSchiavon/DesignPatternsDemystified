@@ -1,24 +1,73 @@
-﻿class Program
+﻿using System;
+using System.Threading;
+
+// State interface
+public interface ITrafficLightState
 {
-    static void Main(string[] args)
+    void Handle(TrafficLight trafficLight);
+}
+
+// Concrete State classes
+public class RedState : ITrafficLightState
+{
+    public void Handle(TrafficLight trafficLight)
     {
-        // Create a shopping cart with the default payment method (Credit Card)
-        var cart = new ShoppingCart(new CreditCardPayment());
-
-        // Make a payment
-        cart.Checkout(100.00);
-
-        // Change the payment method to PayPal
-        cart.SetPaymentStrategy(new PayPalPayment());
-
-        // Make another payment with the new payment method (PayPal)
-        cart.Checkout(50.00);
-
-        // Change the payment method to Bitcoin
-        cart.SetPaymentStrategy(new BitcoinPayment());
-
-        // Make another payment with the new payment method (Bitcoin)
-        cart.Checkout(200.00);
+        Console.WriteLine("Traffic light is red. Stop!");
+        Thread.Sleep(2000); // Simulate red light duration
+        trafficLight.ChangeState(new GreenState());
     }
 }
 
+public class YellowState : ITrafficLightState
+{
+    public void Handle(TrafficLight trafficLight)
+    {
+        Console.WriteLine("Traffic light is yellow. Prepare to stop.");
+        Thread.Sleep(1000); // Simulate yellow light duration
+        trafficLight.ChangeState(new RedState());
+    }
+}
+
+public class GreenState : ITrafficLightState
+{
+    public void Handle(TrafficLight trafficLight)
+    {
+        Console.WriteLine("Traffic light is green. Go!");
+        Thread.Sleep(2000); // Simulate green light duration
+        trafficLight.ChangeState(new YellowState());
+    }
+}
+
+// Context class
+public class TrafficLight
+{
+    private ITrafficLightState currentState;
+
+    public TrafficLight()
+    {
+        currentState = new RedState(); // Initial state is Red
+    }
+
+    public void ChangeState(ITrafficLightState newState)
+    {
+        currentState = newState;
+    }
+
+    public void Request()
+    {
+        currentState.Handle(this);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        TrafficLight trafficLight = new TrafficLight();
+
+        for (int i = 0; i < 5; i++)
+        {
+            trafficLight.Request();
+        }
+    }
+}
