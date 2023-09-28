@@ -1,4 +1,5 @@
-﻿using DesignPatternsDemystified.BehavioralPatterns.State.AudioPlayer;
+﻿using DesignPatternsDemystified.BehavioralPatterns.Observer.StockMarket;
+using DesignPatternsDemystified.BehavioralPatterns.State.AudioPlayer;
 using DesignPatternsDemystified.BehavioralPatterns.State.TrafficLight;
 using DesignPatternsDemystified.BehavioralPatterns.Strategy;
 using DesignPatternsDemystified.BehavioralPatterns.TemplateMethod;
@@ -111,6 +112,26 @@ namespace DesignPatternsDemystified
             player.Play();  // Output: Starting playback.
 
             player.Pause(); // Output: Pausing the playback.
+        }
+
+        private void BtnObserver_Click(object sender, RoutedEventArgs e)
+        {
+            //Create the stock market and investors
+            StockMarket stockMarket = new StockMarket();
+            Investor investor1 = new Investor("John");
+            Investor investor2 = new Investor("Alice");
+
+            //Attach investors to the stock market
+            stockMarket.Attach(investor1);
+            stockMarket.Attach(investor2);
+
+            //Add stocks to the market
+            stockMarket.AddStock("AAPL", 150.0m);
+            stockMarket.AddStock("GOOGL", 2800.0m);
+
+            //Update stock prices
+            stockMarket.UpdateStockPrice("AAPL", 155.0m);
+            stockMarket.UpdateStockPrice("GOOGL", 2850.0m);
         }
     }
 }

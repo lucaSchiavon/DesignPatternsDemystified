@@ -11,11 +11,12 @@
 
 
         <Label Content="Behavioral patterns" HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" FontSize="24" Width="240" FontWeight="Bold"/>
-        <Button Content="Strategy" HorizontalAlignment="Left" Margin="33,181,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnStrategy_Click" FontWeight="Bold" FontSize="20"/>
-        <Button Content="Template method" HorizontalAlignment="Left" Margin="33,228,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnTemplateMethod_Click" FontWeight="Bold" FontSize="20"/>
-        <Button Content="Visitor" HorizontalAlignment="Left" Margin="33,275,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnVisitor_Click" FontWeight="Bold" FontSize="20"/>
-        <Button Content="State - AudioPlayer example" HorizontalAlignment="Left" Margin="33,134,0,0" VerticalAlignment="Top" Height="42" Width="298" Click="BtnStateAudioPlayer_Click" FontWeight="Bold" FontSize="20"/>
-        <Button Content="State - trafficlight example" HorizontalAlignment="Left" Margin="33,76,0,0" VerticalAlignment="Top" Height="42" Width="298" Click="BtnStateTrafficLight_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Strategy" HorizontalAlignment="Left" Margin="33,235,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnStrategy_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Template method" HorizontalAlignment="Left" Margin="33,282,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnTemplateMethod_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Visitor" HorizontalAlignment="Left" Margin="33,329,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnVisitor_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="State - AudioPlayer example" HorizontalAlignment="Left" Margin="33,188,0,0" VerticalAlignment="Top" Height="42" Width="298" Click="BtnStateAudioPlayer_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="State - trafficlight example" HorizontalAlignment="Left" Margin="33,141,0,0" VerticalAlignment="Top" Height="42" Width="298" Click="BtnStateTrafficLight_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Observer" HorizontalAlignment="Left" Margin="33,94,0,0" VerticalAlignment="Top" Height="42" Width="298" Click="BtnObserver_Click" FontWeight="Bold" FontSize="20"/>
 
     </Grid>
 </Window>
