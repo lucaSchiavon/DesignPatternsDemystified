@@ -1,4 +1,6 @@
-﻿using DesignPatternsDemystified.BehavioralPatterns.Observer.StockMarket;
+﻿using DesignPatternsDemystified.BehavioralPatterns.Memento;
+using DesignPatternsDemystified.BehavioralPatterns.NullObject;
+using DesignPatternsDemystified.BehavioralPatterns.Observer.StockMarket;
 using DesignPatternsDemystified.BehavioralPatterns.State.AudioPlayer;
 using DesignPatternsDemystified.BehavioralPatterns.State.TrafficLight;
 using DesignPatternsDemystified.BehavioralPatterns.Strategy;
@@ -132,6 +134,39 @@ namespace DesignPatternsDemystified
             //Update stock prices
             stockMarket.UpdateStockPrice("AAPL", 155.0m);
             stockMarket.UpdateStockPrice("GOOGL", 2850.0m);
+        }
+
+        private void BtnNullObject_Click(object sender, RoutedEventArgs e)
+        {
+            // Create customers with and without notification preferences
+            var customer1 = new Customer("Alice", new EmailNotification("alice@example.com"));
+            var customer2 = new Customer("Bob", new SMSNotification("+123456789"));
+
+            var customer3 = new Customer("Charlie"); // No preference, uses Null Notification
+
+            // Notify customers
+            customer1.Notify("Your order has shipped.");
+            customer2.Notify("Payment received.");
+            customer3.Notify("Special offer!");
+
+            // Customer 3 won't receive any notifications due to Null Notification.
+        }
+
+        private void BtnMemento_Click(object sender, RoutedEventArgs e)
+        {
+            TextEditor textEditor = new TextEditor();
+            TextEditorHistory history = new TextEditorHistory();
+
+            // Editing and saving state
+            textEditor.Text = "First draft";
+            history.Memento = textEditor.Save();
+
+            textEditor.Text = "Second draft";
+
+            // Restoring state
+            textEditor.Restore(history.Memento);
+
+            Console.WriteLine("Current text: " + textEditor);
         }
     }
 }
