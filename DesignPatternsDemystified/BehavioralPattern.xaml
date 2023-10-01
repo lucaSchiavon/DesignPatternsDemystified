@@ -13,12 +13,15 @@
         <Label Content="Behavioral patterns" HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" FontSize="24" Width="240" FontWeight="Bold"/>
         <Button Content="Strategy" HorizontalAlignment="Left" Margin="31,317,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnStrategy_Click" FontWeight="Bold" FontSize="20"/>
         <Button Content="Template method" HorizontalAlignment="Left" Margin="31,364,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnTemplateMethod_Click" FontWeight="Bold" FontSize="20"/>
-        <Button Content="Visitor" HorizontalAlignment="Left" Margin="380,78,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnVisitor_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Visitor" HorizontalAlignment="Left" Margin="380,356,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnVisitor_Click" FontWeight="Bold" FontSize="20"/>
         <Button Content="State - AudioPlayer example" HorizontalAlignment="Left" Margin="31,270,0,0" VerticalAlignment="Top" Height="42" Width="298" Click="BtnStateAudioPlayer_Click" FontWeight="Bold" FontSize="20"/>
         <Button Content="State - trafficlight example" HorizontalAlignment="Left" Margin="31,223,0,0" VerticalAlignment="Top" Height="42" Width="298" Click="BtnStateTrafficLight_Click" FontWeight="Bold" FontSize="20"/>
         <Button Content="Observer" HorizontalAlignment="Left" Margin="31,176,0,0" VerticalAlignment="Top" Height="42" Width="298" Click="BtnObserver_Click" FontWeight="Bold" FontSize="20"/>
         <Button Content="Null Object" HorizontalAlignment="Left" Margin="31,129,0,0" VerticalAlignment="Top" Height="42" Width="298" Click="BtnNullObject_Click" FontWeight="Bold" FontSize="20"/>
         <Button Content="Memento" HorizontalAlignment="Left" Margin="31,82,0,0" VerticalAlignment="Top" Height="42" Width="298" Click="BtnMemento_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Mediator" HorizontalAlignment="Left" Margin="380,309,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnMediator_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Iterator - StudentList" HorizontalAlignment="Left" Margin="380,262,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnIteratorStudentList_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Iterator - BookCatalog" HorizontalAlignment="Left" Margin="380,215,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnIteratorBookCatalog_Click" FontWeight="Bold" FontSize="20"/>
 
     </Grid>
 </Window>

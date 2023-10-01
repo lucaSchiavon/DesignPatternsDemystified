@@ -1,4 +1,7 @@
-﻿using DesignPatternsDemystified.BehavioralPatterns.Memento;
+﻿using DesignPatternsDemystified.BehavioralPatterns.Iterator.BookIterator;
+using DesignPatternsDemystified.BehavioralPatterns.Iterator.StudentIterator;
+using DesignPatternsDemystified.BehavioralPatterns.Mediator;
+using DesignPatternsDemystified.BehavioralPatterns.Memento;
 using DesignPatternsDemystified.BehavioralPatterns.NullObject;
 using DesignPatternsDemystified.BehavioralPatterns.Observer.StockMarket;
 using DesignPatternsDemystified.BehavioralPatterns.State.AudioPlayer;
@@ -167,6 +170,54 @@ namespace DesignPatternsDemystified
             textEditor.Restore(history.Memento);
 
             Console.WriteLine("Current text: " + textEditor);
+        }
+
+        private void BtnMediator_Click(object sender, RoutedEventArgs e)
+        {
+            IChatMediator chatMediator = new ChatMediator();
+
+            IUser user1 = new ChatUser(chatMediator, "User 1");
+            IUser user2 = new ChatUser(chatMediator, "User 2");
+            IUser user3 = new ChatUser(chatMediator, "User 3");
+
+            chatMediator.AddUser(user1);
+            chatMediator.AddUser(user2);
+            chatMediator.AddUser(user3);
+
+            user1.SendMessage("Hello, everyone!");
+            user2.SendMessage("Hi, User 1!");
+        }
+
+        private void BtnIteratorStudentList_Click(object sender, RoutedEventArgs e)
+        {
+            StudentList studentList = new StudentList();
+            studentList.AddStudent(new Student("Alice", 1001));
+            studentList.AddStudent(new Student("Bob", 1002));
+            studentList.AddStudent(new Student("Charlie", 1003));
+
+            IIterator iterator = studentList.CreateIterator();
+
+            while (iterator.HasNext())
+            {
+                Student student = (Student)iterator.Next();
+                Console.WriteLine($"Student Name: {student.Name}, Student ID: {student.StudentID}");
+            }
+        }
+
+        private void BtnIteratorBookCatalog_Click(object sender, RoutedEventArgs e)
+        {
+            BookCatalog catalog = new BookCatalog();
+            catalog.AddBook(new Book("Book 1", "Author 1"));
+            catalog.AddBook(new Book("Book 2", "Author 2"));
+            catalog.AddBook(new Book("Book 3", "Author 3"));
+
+            IIterator<Book> iterator = catalog.CreateIterator();
+
+            while (iterator.HasNext())
+            {
+                Book book = iterator.Next();
+                Console.WriteLine($"Title: {book.Title}, Author: {book.Author}");
+            }
         }
     }
 }
