@@ -1,4 +1,5 @@
 ﻿using DesignPatternsDemystified.CreationalPatterns.Singleton;
+using DesignPatternsDemystified.CreationalPatterns.FactoryMethod;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,5 +71,17 @@ namespace DesignPatternsDemystified
         }
 
         #endregion
+
+        private void BtnFactoryMethod_Click(object sender, RoutedEventArgs e)
+        {
+            // Client code using Factory Method Pattern.
+            IBookFactory mysteryFactory = new MysteryBookFactory();
+            IBook mysteryBook = mysteryFactory.CreateBook();
+            mysteryBook.Read();
+
+            IBookFactory sciFiFactory = new ScienceFictionBookFactory();
+            IBook sciFiBook = sciFiFactory.CreateBook();
+            sciFiBook.Read();
+        }
     }
 }

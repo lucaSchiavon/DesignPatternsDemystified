@@ -1,4 +1,7 @@
-﻿using DesignPatternsDemystified.BehavioralPatterns.Iterator.BookIterator;
+﻿using DesignPatternsDemystified.BehavioralPatterns.Command.LightControl;
+using DesignPatternsDemystified.BehavioralPatterns.Interpreter.DateInterpreter;
+using DesignPatternsDemystified.BehavioralPatterns.Interpreter.NumberInterpreter;
+using DesignPatternsDemystified.BehavioralPatterns.Iterator.BookIterator;
 using DesignPatternsDemystified.BehavioralPatterns.Iterator.StudentIterator;
 using DesignPatternsDemystified.BehavioralPatterns.Mediator;
 using DesignPatternsDemystified.BehavioralPatterns.Memento;
@@ -218,6 +221,54 @@ namespace DesignPatternsDemystified
                 Book book = iterator.Next();
                 Console.WriteLine($"Title: {book.Title}, Author: {book.Author}");
             }
+        }
+
+
+
+        private void BtnInterpreterNumber_Click(object sender, RoutedEventArgs e)
+        {
+            // Context with variable values
+            var context = new Dictionary<string, int>
+            {
+                { "a", 5 },
+                { "b", 3 }
+            };
+
+            // Create the expression tree: a + b - 2
+            IExpression expression = new AddExpression(new VariableExpression("a"), new VariableExpression("b"));
+            expression = new SubtractExpression(expression, new NumberExpression(2));
+
+            // Interpret the expression
+            int result = expression.Interpret(context);
+            Console.WriteLine("Result: " + result); // Output: Result: 6
+        }
+
+        private void BtnInterpreterDate_Click(object sender, RoutedEventArgs e)
+        {
+            // Context: a specific date
+            var context = new DateTime(2023, 10, 1);
+
+            // Create the expression: (context - 7) + 14
+            IDateExpression expression = new SubtractDaysExpression(new AddDaysExpression(new DateExpression(context), -7), 14);
+
+            // Interpret the expression
+            DateTime result = expression.Interpret(context);
+            Console.WriteLine("Result: " + result.ToString("yyyy-MM-dd")); // Output: Result: 2023-10-8
+        }
+
+        private void BtnCommandLighControl_Click(object sender, RoutedEventArgs e)
+        {
+            Light light = new Light();
+            BehavioralPatterns.Command.LightControl.ICommand turnOnCommand = new TurnOnLightCommand(light);
+            BehavioralPatterns.Command.LightControl.ICommand turnOffCommand = new TurnOffLightCommand(light);
+
+            RemoteControl remote = new RemoteControl();
+            remote.AddCommand(turnOnCommand);
+            remote.AddCommand(turnOffCommand);
+
+            remote.PressButton(0); // Turn on the light
+            remote.PressButton(1); // Turn off the light
+            remote.UndoButton(1); // Undo turning off (turn on again)
         }
     }
 }

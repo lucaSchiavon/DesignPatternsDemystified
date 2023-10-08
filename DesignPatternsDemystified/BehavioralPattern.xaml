@@ -22,6 +22,9 @@
         <Button Content="Mediator" HorizontalAlignment="Left" Margin="380,309,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnMediator_Click" FontWeight="Bold" FontSize="20"/>
         <Button Content="Iterator - StudentList" HorizontalAlignment="Left" Margin="380,262,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnIteratorStudentList_Click" FontWeight="Bold" FontSize="20"/>
         <Button Content="Iterator - BookCatalog" HorizontalAlignment="Left" Margin="380,215,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnIteratorBookCatalog_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Interpreter - Number" HorizontalAlignment="Left" Margin="380,168,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnInterpreterNumber_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Interpreter - Date" HorizontalAlignment="Left" Margin="380,121,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnInterpreterDate_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Command - LightControl" HorizontalAlignment="Left" Margin="380,74,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnCommandLighControl_Click" FontWeight="Bold" FontSize="20"/>
 
     </Grid>
 </Window>
