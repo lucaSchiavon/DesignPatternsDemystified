@@ -13,6 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Point = DesignPatternsDemystified.CreationalPatterns.FactoryMethod.Point;
+using DesignPatternsDemystified.CreationalPatterns.AbstractFactory;
 
 namespace DesignPatternsDemystified
 {
@@ -72,16 +74,35 @@ namespace DesignPatternsDemystified
 
         #endregion
 
-        private void BtnFactoryMethod_Click(object sender, RoutedEventArgs e)
+
+        private void BtnAbstractFactory_Click(object sender, RoutedEventArgs e)
+        {
+            // Create a Windows UI Factory
+            IUIFactory windowsFactory = new WindowsUIFactory();
+
+            // Create Windows UI components
+            IButton windowsButton = windowsFactory.CreateButton();
+            ICheckbox windowsCheckbox = windowsFactory.CreateCheckbox();
+
+            windowsButton.Render();
+            windowsCheckbox.Render();
+
+            // Create a macOS UI Factory
+            IUIFactory macFactory = new MacOSUIFactory();
+
+            // Create macOS UI components
+            IButton macButton = macFactory.CreateButton();
+            ICheckbox macCheckbox = macFactory.CreateCheckbox();
+
+            macButton.Render();
+            macCheckbox.Render();
+        }
+
+        private void BtnPointMethod_Click(object sender, RoutedEventArgs e)
         {
             // Client code using Factory Method Pattern.
-            IBookFactory mysteryFactory = new MysteryBookFactory();
-            IBook mysteryBook = mysteryFactory.CreateBook();
-            mysteryBook.Read();
-
-            IBookFactory sciFiFactory = new ScienceFictionBookFactory();
-            IBook sciFiBook = sciFiFactory.CreateBook();
-            sciFiBook.Read();
+            CreationalPatterns.FactoryMethod.Point cartesianPoint = Point.NewCartesianPoint(3, 5);
+            CreationalPatterns.FactoryMethod.Point polarPoint = Point.NewPolarPoint(3, 5);
         }
     }
 }

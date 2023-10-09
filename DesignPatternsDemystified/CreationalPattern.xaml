@@ -15,6 +15,7 @@
         <Button Content="Database connection" HorizontalAlignment="Left" Margin="33,124,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnDatabaseConnection_Click" FontWeight="Bold" FontSize="20"/>
         <Button Content="Singleton" HorizontalAlignment="Left" Margin="33,82,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnSingleton_Click" FontWeight="Bold" FontSize="20"/>
         <Button Content="App setting" HorizontalAlignment="Left" Margin="33,166,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnAppSettings_Click" FontWeight="Bold" FontSize="20"/>
-        <Button Content="Factory method - Book" HorizontalAlignment="Center" Margin="0,83,0,0" VerticalAlignment="Top" Height="42" Width="232" Click="BtnFactoryMethod_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Factory method - Point" HorizontalAlignment="Center" Margin="0,83,0,0" VerticalAlignment="Top" Height="42" Width="232" Click="BtnPointMethod_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Abstract factory" HorizontalAlignment="Left" Margin="280,130,0,0" VerticalAlignment="Top" Height="42" Width="232" Click="BtnAbstractFactory_Click" FontWeight="Bold" FontSize="20"/>
     </Grid>
 </Window>
