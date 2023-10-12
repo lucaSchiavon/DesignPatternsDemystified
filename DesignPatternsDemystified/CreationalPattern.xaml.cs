@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Point = DesignPatternsDemystified.CreationalPatterns.FactoryMethod.Point;
 using DesignPatternsDemystified.CreationalPatterns.AbstractFactory;
+using DesignPatternsDemystified.CreationalPatterns.Builder;
 
 namespace DesignPatternsDemystified
 {
@@ -103,6 +104,19 @@ namespace DesignPatternsDemystified
             // Client code using Factory Method Pattern.
             CreationalPatterns.FactoryMethod.Point cartesianPoint = Point.NewCartesianPoint(3, 5);
             CreationalPatterns.FactoryMethod.Point polarPoint = Point.NewPolarPoint(3, 5);
+        }
+
+        private void BtnBuilder_Click(object sender, RoutedEventArgs e)
+        {
+            // Create a director and a concrete builder
+            var director = new ComputerDirector(new GamingComputerBuilder());
+
+            // Construct a gaming computer
+            Computer gamingComputer = director.ConstructComputer();
+
+            // Display computer details
+            Console.WriteLine("Gaming Computer Details:");
+            gamingComputer.ShowDetails();
         }
     }
 }
