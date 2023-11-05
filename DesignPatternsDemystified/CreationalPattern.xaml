@@ -18,5 +18,6 @@
         <Button Content="Factory method - Point" HorizontalAlignment="Center" Margin="0,239,0,0" VerticalAlignment="Top" Height="42" Width="232" Click="BtnPointMethod_Click" FontWeight="Bold" FontSize="20"/>
         <Button Content="Abstract factory" HorizontalAlignment="Left" Margin="280,286,0,0" VerticalAlignment="Top" Height="42" Width="232" Click="BtnAbstractFactory_Click" FontWeight="Bold" FontSize="20"/>
         <Button Content="Builder" HorizontalAlignment="Center" Margin="0,187,0,0" VerticalAlignment="Top" Height="42" Width="232" Click="BtnBuilder_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Prototype" HorizontalAlignment="Center" Margin="0,137,0,0" VerticalAlignment="Top" Height="42" Width="232" Click="BtnPrototype_Click" FontWeight="Bold" FontSize="20"/>
     </Grid>
 </Window>

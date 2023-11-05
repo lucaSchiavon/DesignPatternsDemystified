@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using Point = DesignPatternsDemystified.CreationalPatterns.FactoryMethod.Point;
 using DesignPatternsDemystified.CreationalPatterns.AbstractFactory;
 using DesignPatternsDemystified.CreationalPatterns.Builder;
+using DesignPatternsDemystified.CreationalPatterns.Prototype;
 
 namespace DesignPatternsDemystified
 {
@@ -117,6 +118,26 @@ namespace DesignPatternsDemystified
             // Display computer details
             Console.WriteLine("Gaming Computer Details:");
             gamingComputer.ShowDetails();
+        }
+
+
+
+        private void BtnPrototype_Click(object sender, RoutedEventArgs e)
+        {
+
+            CreationalPatterns.Prototype.Person.Person person1 =
+                new("Mario Rossi", new CreationalPatterns.Prototype.Person.Address("Via Mazzini", 15));
+
+            CreationalPatterns.Prototype.Person.Person person2 = person1.DeepCopy();
+
+            person2.Address.HouseNumber = 45;
+
+            //using binary serialization to make a deep copy of all object
+            CreationalPatterns.Prototype.Person.Person person3 = person1.DeepBinaryCopy();
+
+            //using binary serialization to make a deep copy of all object
+            CreationalPatterns.Prototype.Person.Person person4 = person1.DeepXmlCopy();
+
         }
     }
 }
