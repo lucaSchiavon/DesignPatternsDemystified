@@ -40,5 +40,11 @@ namespace DesignPatternsDemystified
             SOLIDPrinciple sOLIDPrinciple = new SOLIDPrinciple();
             sOLIDPrinciple.Show();
         }
+
+        private void BtnStructuralPatterns_Click(object sender, RoutedEventArgs e)
+        {
+            StructuralPattern structuralPattern = new StructuralPattern();
+            structuralPattern.Show();
+        }
     }
 }
