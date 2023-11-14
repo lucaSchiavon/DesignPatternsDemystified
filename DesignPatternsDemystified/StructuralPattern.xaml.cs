@@ -17,11 +17,14 @@ using Point = DesignPatternsDemystified.CreationalPatterns.FactoryMethod.Point;
 using DesignPatternsDemystified.CreationalPatterns.AbstractFactory;
 using DesignPatternsDemystified.CreationalPatterns.Builder;
 using DesignPatternsDemystified.CreationalPatterns.Prototype;
+using DesignPatternsDemystified.StructuralPatterns.Bridge;
+using DesignPatternsDemystified.StructuralPatterns.Composite;
+using DesignPatternsDemystified.StructuralPatterns.Decorator;
 
 namespace DesignPatternsDemystified
 {
 
-    public partial class StructuralPattern : Window
+    public partial class StructuralPattern : System.Windows.Window
     {
         public StructuralPattern()
         {
@@ -40,9 +43,47 @@ namespace DesignPatternsDemystified
 
 
 
+
+
         #endregion
 
+        private void BtnBridge_Click(object sender, RoutedEventArgs e)
+        {
+            RemoteControl RemoteControl = new(new SonyTv());
+            RemoteControl.TurnOn();
+
+            AdvanceRemoteControl advanceRemoteControl = new AdvanceRemoteControl(new SonyTv());
+            advanceRemoteControl.SetChannel(5);
 
 
+        }
+
+        private void BtnComposite_Click(object sender, RoutedEventArgs e)
+        {
+            var button1 = new StructuralPatterns.Composite.Button("OK");
+            var button2 = new StructuralPatterns.Composite.Button("Cancel");
+            var textBox = new StructuralPatterns.Composite.TextBox("Type something here");
+
+            // Creating composite element
+            var window = new StructuralPatterns.Composite.Window();
+            window.AddComponent(button1);
+            window.AddComponent(button2);
+            window.AddComponent(textBox);
+
+            // Displaying the composite (window) which in turn displays its children
+            window.Display();
+        }
+
+        private void BtnDecorator_Click(object sender, RoutedEventArgs e)
+        {
+            ICoffee coffee = new SimpleCoffee();
+            Console.WriteLine("Cost of simple coffee: " + coffee.Cost());
+
+            coffee = new MilkDecorator(coffee);
+            Console.WriteLine("Cost of milk coffee: " + coffee.Cost());
+
+            coffee = new SugarDecorator(coffee);
+            Console.WriteLine("Cost of sugar and milk coffee: " + coffee.Cost());
+        }
     }
 }

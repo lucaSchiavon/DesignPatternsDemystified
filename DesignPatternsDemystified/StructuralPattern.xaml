@@ -12,5 +12,8 @@
 
         <Label Content="Structural patterns" HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" FontSize="24" Width="240" FontWeight="Bold"/>
         <Button Content="Adapter" HorizontalAlignment="Left" Margin="33,82,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnAdapter_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Bridge" HorizontalAlignment="Left" Margin="33,129,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnBridge_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Composite" HorizontalAlignment="Left" Margin="33,176,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnComposite_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Decorator" HorizontalAlignment="Left" Margin="33,223,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnDecorator_Click" FontWeight="Bold" FontSize="20"/>
     </Grid>
 </Window>
