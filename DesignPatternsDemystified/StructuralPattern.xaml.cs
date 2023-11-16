@@ -20,6 +20,7 @@ using DesignPatternsDemystified.CreationalPatterns.Prototype;
 using DesignPatternsDemystified.StructuralPatterns.Bridge;
 using DesignPatternsDemystified.StructuralPatterns.Composite;
 using DesignPatternsDemystified.StructuralPatterns.Decorator;
+using DesignPatternsDemystified.StructuralPatterns.Facade;
 
 namespace DesignPatternsDemystified
 {
@@ -84,6 +85,16 @@ namespace DesignPatternsDemystified
 
             coffee = new SugarDecorator(coffee);
             Console.WriteLine("Cost of sugar and milk coffee: " + coffee.Cost());
+        }
+
+        private void BtnFacade_Click(object sender, RoutedEventArgs e)
+        {
+            // Using the Facade to simplify interaction with the subsystem
+            HomeTheaterFacade homeTheater = new HomeTheaterFacade();
+            homeTheater.WatchMovie("Inception");
+
+            // After watching the movie, you can use the facade to clean up
+            homeTheater.EndMovie();
         }
     }
 }

@@ -15,5 +15,6 @@
         <Button Content="Bridge" HorizontalAlignment="Left" Margin="33,129,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnBridge_Click" FontWeight="Bold" FontSize="20"/>
         <Button Content="Composite" HorizontalAlignment="Left" Margin="33,176,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnComposite_Click" FontWeight="Bold" FontSize="20"/>
         <Button Content="Decorator" HorizontalAlignment="Left" Margin="33,223,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnDecorator_Click" FontWeight="Bold" FontSize="20"/>
+        <Button Content="Facade" HorizontalAlignment="Left" Margin="33,270,0,0" VerticalAlignment="Top" Height="42" Width="231" Click="BtnFacade_Click" FontWeight="Bold" FontSize="20"/>
     </Grid>
 </Window>
