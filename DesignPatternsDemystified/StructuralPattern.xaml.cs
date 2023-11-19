@@ -21,6 +21,7 @@ using DesignPatternsDemystified.StructuralPatterns.Bridge;
 using DesignPatternsDemystified.StructuralPatterns.Composite;
 using DesignPatternsDemystified.StructuralPatterns.Decorator;
 using DesignPatternsDemystified.StructuralPatterns.Facade;
+using DesignPatternsDemystified.StructuralPatterns.Flyweight;
 
 namespace DesignPatternsDemystified
 {
@@ -95,6 +96,21 @@ namespace DesignPatternsDemystified
 
             // After watching the movie, you can use the facade to clean up
             homeTheater.EndMovie();
+        }
+
+        private void BtnFlyweight_Click(object sender, RoutedEventArgs e)
+        {
+            TextEditor textEditor = new TextEditor();
+
+            // Insert characters into the text editor
+            textEditor.InsertCharacter('H', 0);
+            textEditor.InsertCharacter('e', 1);
+            textEditor.InsertCharacter('l', 2);
+            textEditor.InsertCharacter('l', 3);
+            textEditor.InsertCharacter('o', 4);
+
+            // Display the text
+            textEditor.DisplayText();
         }
     }
 }
