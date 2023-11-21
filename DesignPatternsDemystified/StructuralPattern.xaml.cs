@@ -22,6 +22,7 @@ using DesignPatternsDemystified.StructuralPatterns.Composite;
 using DesignPatternsDemystified.StructuralPatterns.Decorator;
 using DesignPatternsDemystified.StructuralPatterns.Facade;
 using DesignPatternsDemystified.StructuralPatterns.Flyweight;
+using DesignPatternsDemystified.StructuralPatterns.Proxy.ProxyImage;
 
 namespace DesignPatternsDemystified
 {
@@ -111,6 +112,15 @@ namespace DesignPatternsDemystified
 
             // Display the text
             textEditor.DisplayText();
+        }
+
+        private void BtnProxy_Click(object sender, RoutedEventArgs e)
+        {
+            // Client interacts with the Proxy
+            IImage image = new ProxyImage("sample.jpg");
+
+            // The real image is loaded and displayed only when needed
+            image.Display();
         }
     }
 }
