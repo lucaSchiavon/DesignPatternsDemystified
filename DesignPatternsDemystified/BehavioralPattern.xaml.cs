@@ -1,4 +1,5 @@
-﻿using DesignPatternsDemystified.BehavioralPatterns.Command.LightControl;
+﻿using DesignPatternsDemystified.BehavioralPatterns.ChainOfResponsability;
+using DesignPatternsDemystified.BehavioralPatterns.Command.LightControl;
 using DesignPatternsDemystified.BehavioralPatterns.Interpreter.DateInterpreter;
 using DesignPatternsDemystified.BehavioralPatterns.Interpreter.NumberInterpreter;
 using DesignPatternsDemystified.BehavioralPatterns.Iterator.BookIterator;
@@ -269,6 +270,29 @@ namespace DesignPatternsDemystified
             remote.PressButton(0); // Turn on the light
             remote.PressButton(1); // Turn off the light
             remote.UndoButton(1); // Undo turning off (turn on again)
+        }
+
+        private void BtnChainOfR_PurchaseRequest_Click(object sender, RoutedEventArgs e)
+        {
+            // Construct the chain of approvers
+            IApprover manager = new Approver("Manager", 1000);
+            IApprover director = new Approver("Director", 5000, manager);
+            IApprover vicePresident = new Approver("Vice President", 10000, director);
+
+
+            // Client creates a purchase request
+            PurchaseRequest request1 = new PurchaseRequest("Laptop", 8000);
+            PurchaseRequest request2 = new PurchaseRequest("Office Chair", 1200);
+            PurchaseRequest request3 = new PurchaseRequest("Stationery", 300);
+
+            // Client initiates requests through the chain
+            vicePresident.ProcessRequest(request1);
+            Console.WriteLine();
+
+            vicePresident.ProcessRequest(request2);
+            Console.WriteLine();
+
+            vicePresident.ProcessRequest(request3);
         }
     }
 }
